@@ -1,0 +1,84 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+    
+        font-family: "Poppins", sans-serif;
+
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1da1f2;
+    color: white;
+}
+
+#profile {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+#cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#profile-image {
+    position: absolute;
+    bottom: -50px;
+    left: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 13%;
+}
+
+#posts, #comments {
+    width: 45%;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#username{
+    margin-top: 5%;
+}
+#user-details{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 20px;
+}
+
+.card i {
+    margin-right: 10px;
+}
