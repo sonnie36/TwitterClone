@@ -9,7 +9,9 @@ body {
 
     
 }
-
+p{
+    font-size: 15px;
+}
 .header {
     display: flex;
     justify-content: space-around;
@@ -64,11 +66,13 @@ body {
 
 main {
     display: flex;
-    justify-content: space-between;
     padding: 20px;
+    justify-content: space-between;
     margin-top: 25%;
 }
-
+.heart{
+    display: flex;
+}
 #posts, #comments {
     width: 45%;
     border: 1px solid #ddd;
@@ -92,6 +96,10 @@ main {
     margin-bottom: 20px;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
 .card h3 {
     margin-bottom: 10px;
 }
@@ -99,7 +107,10 @@ main {
 .card p {
     margin-bottom: 20px;
 }
-
+.imageC{
+    width:60px;
+    height:60px;
+}
 .card i {
     margin-right: 10px;
 }
@@ -110,3 +121,7 @@ main {
     flex-direction: row-reverse;
     justify-content: center;
 }
+/* .content-div{
+    display: flex;
+    gap:10px;
+} */

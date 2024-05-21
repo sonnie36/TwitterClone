@@ -7,6 +7,7 @@ const user1 = document.getElementById('user1');
 const website = document.getElementById('website');
 const Userlocation = document.querySelector('.location');
 const multi = document.querySelector('.multi');
+const main = document.querySelector('#main');
 
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
@@ -38,13 +39,25 @@ function displayUser(user) {
 }
 
 function displayPosts(userId,username) {
+  
     fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
         .then(response => response.json())
         .then(posts => {
             postsDiv.innerHTML = '';
+
             posts.forEach(post => {
                 const postCard = document.createElement('div');
                 postCard.classList.add('card');
+
+                
+                const imageCard = document.createElement('div');
+                imageCard.classList.add('image-card');
+                postCard.appendChild(imageCard);
+
+                const imageC = document.createElement('img');
+                imageC.classList.add('imageC');
+                imageC.src = "https://sb.kaleidousercontent.com/67418/1672x1018/6463a5af0d/screenshot-2022-05-24-at-15-22-28.png";
+                imageCard.appendChild(imageC);
 
                 const nameDiv = document.createElement('div');
                 nameDiv.classList.add('name-div');
@@ -83,15 +96,21 @@ function displayComments(postId) {
     fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
         .then(response => response.json())
         .then(comments => {
+
             commentsDiv.innerHTML = '';
             comments.forEach(comment => {
                 const commentCard = document.createElement('div');
                 commentCard.classList.add('card');
 
-                const commentName = document.createElement('h5');
-                commentName.textContent = "Post " + postId + " comments"
-                commentCard.appendChild(commentName);
- 
+                const imageCard = document.createElement('div');
+                imageCard.classList.add('image-card');
+                commentCard.appendChild(imageCard);
+
+                const imageC = document.createElement('img');
+                imageC.classList.add('imageC');
+                imageC.src = "https://sb.kaleidousercontent.com/67418/1672x1018/6463a5af0d/screenshot-2022-05-24-at-15-22-28.png";
+                imageCard.appendChild(imageC);
+
                 const commentText = document.createElement('p');
                 commentText.textContent = comment.body;
                 commentCard.appendChild(commentText);
@@ -99,7 +118,7 @@ function displayComments(postId) {
                 const iconsDiv = document.createElement('div');
                 iconsDiv.innerHTML = `
                     <i class="fas fa-comment" style="color: #1da1f2;"></i>
-                    <i class="fas fa-heart" style="color: #e0245e;"></i>
+                    <i class="fas fa-heart heart" style="color: #e0245e;"> 0</i>
                     <i class="fas fa-share-alt" style="color: #17bf63;"></i>
                 `;
                 commentCard.appendChild(iconsDiv);
@@ -107,4 +126,6 @@ function displayComments(postId) {
                 commentsDiv.appendChild(commentCard);
             });
         });
-}
+        
+    }
+
