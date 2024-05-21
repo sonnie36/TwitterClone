@@ -21,7 +21,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
         userSelect.addEventListener('change', function() {
             const selectedUser = users.find(user => user.id == this.value);
             displayUser(selectedUser);
-            displayPosts(selectedUser.id);
+            displayPosts(selectedUser.id, selectedUser.name);
         });
 
         // Display the first user by default
@@ -37,7 +37,7 @@ function displayUser(user) {
     Userlocation.textContent = user.address.city;
 }
 
-function displayPosts(userId) {
+function displayPosts(userId,username) {
     fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
         .then(response => response.json())
         .then(posts => {
@@ -46,9 +46,26 @@ function displayPosts(userId) {
                 const postCard = document.createElement('div');
                 postCard.classList.add('card');
 
-                const postTitle = document.createElement('h3');
-                postTitle.textContent = post.title;
-                postCard.appendChild(postTitle);
+                const nameDiv = document.createElement('div');
+                nameDiv.classList.add('name-div');
+                postCard.appendChild(nameDiv);
+
+                const iconsDiv = document.createElement('div');
+                iconsDiv.innerHTML = `
+                    <i class="fas fa-share-alt" style="color: #17bf63;"></i>
+                    <i class="fab fa-twitter" style="color: #1da1f2;"></i>
+                `;
+                nameDiv.appendChild(iconsDiv);
+
+                const postTitle = document.createElement('h5');
+                postTitle.textContent = username;
+                nameDiv.appendChild(postTitle);
+
+
+
+                const postBody = document.createElement('p');
+                postBody.textContent = post.body;
+                postCard.appendChild(postBody);
 
                 postCard.addEventListener('click', function() {
                     displayComments(post.id);
@@ -71,6 +88,10 @@ function displayComments(postId) {
                 const commentCard = document.createElement('div');
                 commentCard.classList.add('card');
 
+                const commentName = document.createElement('h5');
+                commentName.textContent = "Post " + postId + " comments"
+                commentCard.appendChild(commentName);
+ 
                 const commentText = document.createElement('p');
                 commentText.textContent = comment.body;
                 commentCard.appendChild(commentText);
