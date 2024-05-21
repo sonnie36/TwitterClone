@@ -29,28 +29,12 @@ fetch('https://jsonplaceholder.typicode.com/users')
         userSelect.dispatchEvent(new Event('change'));
     });
 
-        // username.textContent = user.name;
-    // const namedet = document.createElement('h4');
-    // namedet.textContent = `Name: ${user.name}`;
-    // const emaildet = document.createElement('h4');
-    // emaildet.textContent = `Email: ${user.email}`;
-    // const phonedet = document.createElement('h4');
-    // phonedet.textContent = `Phone: ${user.phone}`;
-    // const adddressdet = document.createElement('h4');
-    // adddressdet.textContent = `Address: ${user.address.city}`;
-    // userDetails.appendChild(namedet);
-    // userDetails.appendChild(emaildet)
-    // userDetails.appendChild(phonedet)
-    // userDetails.appendChild(adddressdet)
-    // userDetails.innerHTML = `<h2>Hello</h2>`
 function displayUser(user) {
     username.textContent = user.name;
     user1.textContent = user.username;
     website.textContent = user.website;
     multi.textContent = user.company.catchPhrase
     Userlocation.textContent = user.address.city;
-
-    // userDetails.textContent = `User: @${user.username}\nEmail: ${user.email}\nPhone: ${user.phone}\nLocation: ${user.address.city}`;
 }
 
 function displayPosts(userId) {

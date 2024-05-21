@@ -10,19 +10,34 @@ body {
     
 }
 
-header {
+.header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 20px;
+    flex-wrap: wrap;
+    height:70px;
+    /* padding: 20px; */
     background-color: #1da1f2;
     color: white;
+}
+.selDiv{
+    display: flex;
+    gap:5px;
+    align-items: center;
 }
 
 #profile {
     position: relative;
     width: 100%;
     height: 200px;
+    
+}
+#user-select{
+ border:none;
+ outline:none;
+ width:200px;
+ border-radius:5px;
+ padding:10px;
 }
 
 #cover-image {
@@ -40,12 +55,19 @@ header {
     border-radius: 50%;
     border: 3px solid white;
 }
+.details{
+    padding-left: 30px;
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+
+}
 
 main {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    margin-top: 13%;
+    margin-top: 20%;
 }
 
 #posts, #comments {
